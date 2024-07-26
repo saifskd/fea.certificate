@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./certificate.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Certificate</title>
+</head>
+
+<body>
+    
+    <!-- <h1>Hellow</h1> -->
+
+    <div class="certificate_man_div">
+        <div class="relative" id="certificatediv">
+            <h4 id="certificate-name">Md Saif</h4>
+            <h3 id="certificate-id">208688</h3>
+            <h2 id="certificate-days">208</h2>
+            <span id="dob">15/7/2006</span>
+            <!-- <img class="certificate" src="blob:https://web.whatsapp.com/3f5fad3a-9663-40c2-8655-f9464d345f17" alt=""> -->
+            <img class="certificate" src="../images/feaCertificate.jpg" alt="">
+        </div>
+        <div class="download_png">
+            <button class="download_btn"> DOWLOAD CERTIFICATE
+            </button>
+        </div>
+    </div>
+
+
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            var data = new URLSearchParams(window.location.search);
+
+            document.getElementById("certificate-name").innerHTML = data.get("fullname")
+            document.getElementById("certificate-id").innerHTML = data.get("fullid")
+            document.getElementById("certificate-days").innerHTML = data.get("AttendedDays")
+            document.getElementById("dob").innerHTML = data.get("dob")
+        })
+
+        document.querySelector(".download_btn").addEventListener("click", () => window.print())
+    </script>
+</body>
+
+</html>
